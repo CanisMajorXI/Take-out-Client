@@ -106,25 +106,6 @@ function OrderConfirmation(props) {
         <h1>Confirm the order</h1>
       </header>
       <section className="address">
-        {/*{*/}
-        {/*  address.name ? (*/}
-        {/*    <>*/}
-        {/*      <p>订单配送至</p>*/}
-        {/*      <Link to={{ pathname: '/user/address/select', search: `?redirect=${location.pathname + location.search}` }}>*/}
-        {/*        <p>*/}
-        {/*          <span>{address.address + address.detail}</span>*/}
-        {/*          <span>></span>*/}
-        {/*        </p>*/}
-        {/*        <div className="user_detail">*/}
-        {/*          <span>{address.name}</span>*/}
-        {/*          <span>{address.phone}</span>*/}
-        {/*        </div>*/}
-        {/*      </Link>*/}
-        {/*    </>*/}
-        {/*  ) : (*/}
-        {/*      <Link to='/user/address/select' className='address_select'>选择地址</Link>*/}
-        {/*    )*/}
-        {/*}*/}
       </section>
       <section className="cart_group">
         <h3 className="cart_storename">{order.storeName}</h3>
@@ -132,9 +113,6 @@ function OrderConfirmation(props) {
           {order.cartList && order.cartList.map((food, i) => {
             return (
               <li className="cart_item" key={i}>
-                {/*<div className="logo">*/}
-                {/*  <img src={food.pic} alt="logo" />*/}
-                {/*</div>*/}
                 <span className="name">{food.name}</span>
                 <span className="num">x {food.num}</span>
                 <span className="price">￥{food.price}</span>

@@ -44,11 +44,8 @@ function BottomCart(props) {
     <div className='bottom_cart_container'>
       {
         isEmpty ? (<>
-          {/*<span className='cart_icon'><i className='iconfont icon-icon_cart'></i></span>*/}
           <div className='cart_setail'>Empty Cart</div>
-          {/*<div className='pay'>￥0起送</div>*/}
         </>) : (<>
-            {/*<span className='cart_icon active'><i className='iconfont icon-icon_cart active'></i></span>*/}
             <div className='cart_setail'>
               <p className='all_price'>￥{allPrice}</p>
             </div>

@@ -63,18 +63,6 @@ class User extends Component {
             </button>
           </header>
         )}
-        {/*
-            <section className='coupon'>
-          <div className='red_packets con'>
-            <p><span>3</span>个</p>
-            <span>红包</span>
-          </div>
-          <div className='integral con'>
-            <p><span>3</span>个</p>
-            <span>积分</span>
-          </div>
-        </section>
-          */}
         <section className="address_b">
           <div className="icon">
             <i className="iconfont icon-dizhi"></i>
@@ -84,35 +72,6 @@ class User extends Component {
             <span>></span>
           </Link>
         </section>
-        {/*<section className="help_container">*/}
-        {/*  <Link className="help" to="/help">*/}
-        {/*    <div className="help-i">*/}
-        {/*      <i className="iconfont icon-kefu"></i>*/}
-        {/*    </div>*/}
-        {/*    <div className="help-t">*/}
-        {/*      <span>我的客服</span>*/}
-        {/*      <span>></span>*/}
-        {/*    </div>*/}
-        {/*  </Link>*/}
-        {/*  <Link className="help" to='/download'>*/}
-        {/*    <div className="help-i">*/}
-        {/*      <i className="iconfont icon-app"></i>*/}
-        {/*    </div>*/}
-        {/*    <div className="help-t">*/}
-        {/*      <span>下载APP</span>*/}
-        {/*      <span>></span>*/}
-        {/*    </div>*/}
-        {/*  </Link>*/}
-        {/*  <Link className="help" to='regular'>*/}
-        {/*    <div className="help-i">*/}
-        {/*      <i className="iconfont icon-guize"></i>*/}
-        {/*    </div>*/}
-        {/*    <div className="help-t gua">*/}
-        {/*      <span>规则中心</span>*/}
-        {/*      <span>></span>*/}
-        {/*    </div>*/}
-        {/*  </Link>*/}
-        {/*</section>*/}
         <BottomTabBar />
       </div>
     )

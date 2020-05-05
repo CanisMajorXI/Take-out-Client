@@ -67,31 +67,10 @@ class Shop extends Component {
     return (
       <div className="goods_container">
         <div className="store_detail">
-          {/*<nav className="nav_goback" style={{backgroundImage: `url(${shopData['store_pic']})`}}>*/}
-          {/*  <a className="goback" onClick={this.clickGoback.bind(this)}>*/}
-          {/*    <i className="iconfont icon-you-copy"></i>*/}
-          {/*  </a>*/}
-          {/*</nav>*/}
           <div className="content">
-            {/*<div className="store_logo">*/}
-            {/*  <img*/}
-            {/*    src={shopData['store_logo_url']}*/}
-            {/*    alt="logo"*/}
-            {/*  />*/}
-            {/*</div>*/}
             <div className="store_name">
               <h2>{shopData['store_name']}</h2>
             </div>
-            {/*<div className="store_data">*/}
-            {/*  <span>评价{shopData['store_grade']}</span>*/}
-            {/*  <span>月售{shopData['store_sales']}单</span>*/}
-            {/*  <span>约30分钟</span>*/}
-            {/*</div>*/}
-            {/*<div className="store_notice">*/}
-            {/*  <span>*/}
-            {/*    公告: {shopData['store_notice']}*/}
-            {/*  </span>*/}
-            {/*</div>*/}
           </div>
         </div>
         <div className="shop_tab">

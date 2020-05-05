@@ -133,31 +133,13 @@ function ShopFoodList(props) {
                     ''
                   ) : (
                     <dl key={i}>
-                      {/*<dt>*/}
-                      {/*  <div className="food_title">*/}
-                      {/*    <strong>{cat.cat_name}</strong>*/}
-                      {/*    {i === 0 ? <span>大家喜欢吃，才叫真好吃。</span> : ''}*/}
-                      {/*  </div>*/}
-                      {/*</dt>*/}
                       {cat.children.map((item, index) => {
                         return (
                           <dd key={index}>
                             <div className="food_detail_wrapper">
-                              {/*<span className="food_pic">*/}
-                              {/*  <img*/}
-                              {/*    src={*/}
-                              {/*      item.food_pic ||*/}
-                              {/*      'http://pic.51yuansu.com/pic3/cover/01/55/70/594c83ce7e5b3_610.jpg'*/}
-                              {/*    }*/}
-                              {/*    alt=""*/}
-                              {/*  />*/}
-                              {/*</span>*/}
                               <section className="food">
                                 <div className="food_detail">
                                   <p className="food_name">{item.food_name}</p>
-                                  {/*<p className="food_desc">*/}
-                                  {/*  {item.food_ingredient}*/}
-                                  {/*</p>*/}
                                   <p className="food_sales">
                                     <span>Month Sales: {item.food_sales}</span>
                                     <span>Pos Rate: 100%</span>
