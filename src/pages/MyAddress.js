@@ -16,7 +16,7 @@ function MyAddress(props) {
 
   function deleteAddress(id) {
     Modal.confirm({
-      contentText: '确认删除吗?',
+      contentText: 'Are you sure to delete?',
       async onOk() {
         const result = await reqDeleteAddress(id)
 
@@ -39,7 +39,7 @@ function MyAddress(props) {
         <span onClick={handleGoBack}>
           <i className="iconfont icon-you-copy"></i>
         </span>
-        <h1>我的地址</h1>
+        <h1>My Address</h1>
       </header>
       {!addressList.length ? (
         <EmptyTip />
@@ -85,7 +85,7 @@ function MyAddress(props) {
         })}
       >
         <span className="iconfont icon-jia"></span>
-        <p>新增收货地址</p>
+        <p>Add New Address</p>
       </Link>
     </div>
   )

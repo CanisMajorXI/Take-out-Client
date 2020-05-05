@@ -46,18 +46,18 @@ function ChangePassword(props) {
         <span onClick={handleGoBack}>
           <i className="iconfont icon-you-copy"></i>
         </span>
-        <h1>修改密码</h1>
+        <h1>Change Password</h1>
       </header>
       <section className='form_group'>
         <label htmlFor="old_pass">
-          旧密码：
+          Old Password：
           <input ref={oldInput} type="password" name="old" id="old_pass" />
         </label>
         <label htmlFor="new_pass">
-          新密码：
+          New Password：
           <input ref={newInput} type="password" name="new" id="new_pass" />
         </label>
-        <button onClick={confirmChange}>确认修改</button>
+        <button onClick={confirmChange}>Confirm Modification </button>
       </section>
     </div>
   )

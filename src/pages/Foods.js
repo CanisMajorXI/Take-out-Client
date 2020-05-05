@@ -65,28 +65,28 @@ class Food extends Component {
           <Link to="/search" className="search_input">
             <div className="ipt">
               <i className="iconfont icon-sousuo"></i>
-              <span>搜索附近商家、商品名称</span>
+              <span>Search nearby shops</span>
             </div>
           </Link>
         </header>
-        <section className="carousel">
-          <KeepAlive>
-            <Carousel>
-              <Link to="/shop/5dd292a8b077520c2839aa0b">
-                <img src={cat2} alt="" />
-              </Link>
-              <Link to="/shop/5dd292a8b077520c2839aa0b">
-                <img src={cat3} alt="" />
-              </Link>
-              <Link to="/shop/5dd292a8b077520c2839aa0b">
-                <img src={cat4} alt="" />
-              </Link>
-            </Carousel>
-          </KeepAlive>
-        </section>
+        {/*<section className="carousel">*/}
+        {/*  <KeepAlive>*/}
+        {/*    <Carousel>*/}
+        {/*      <Link to="/shop/5dd292a8b077520c2839aa0b">*/}
+        {/*        <img src={cat2} alt="" />*/}
+        {/*      </Link>*/}
+        {/*      <Link to="/shop/5dd292a8b077520c2839aa0b">*/}
+        {/*        <img src={cat3} alt="" />*/}
+        {/*      </Link>*/}
+        {/*      <Link to="/shop/5dd292a8b077520c2839aa0b">*/}
+        {/*        <img src={cat4} alt="" />*/}
+        {/*      </Link>*/}
+        {/*    </Carousel>*/}
+        {/*  </KeepAlive>*/}
+        {/*</section>*/}
         <section className="recommended_merchants">
           <span className="split">——</span>
-          <span className="title">推荐商家</span>
+          <span className="title">Recommend</span>
           <span className="split">——</span>
         </section>
         <section className="merchants">

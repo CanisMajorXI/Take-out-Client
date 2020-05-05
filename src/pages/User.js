@@ -37,9 +37,9 @@ class User extends Component {
             onClick={this.historyToInfo.bind(this)}
           >
             <div className="profile">
-              <div className="avatar">
-                <img src={avatar} alt="" />
-              </div>
+              {/*<div className="avatar">*/}
+              {/*  <img src={avatar} alt="" />*/}
+              {/*</div>*/}
               <div className="profile_text">
                 <span>{username}</span>
                 <span>{phone}</span>
@@ -53,13 +53,13 @@ class User extends Component {
               className="register btn"
               onClick={this.handleClickRegister.bind(this)}
             >
-              注册
+              Sign up
             </button>
             <button
               className="login btn"
               onClick={this.handleClickLogin.bind(this)}
             >
-              登录
+              Sign in
             </button>
           </header>
         )}
@@ -80,39 +80,39 @@ class User extends Component {
             <i className="iconfont icon-dizhi"></i>
           </div>
           <Link className="address" to="/user/address">
-            <span>我的地址</span>
+            <span>My Address</span>
             <span>></span>
           </Link>
         </section>
-        <section className="help_container">
-          <Link className="help" to="/help">
-            <div className="help-i">
-              <i className="iconfont icon-kefu"></i>
-            </div>
-            <div className="help-t">
-              <span>我的客服</span>
-              <span>></span>
-            </div>
-          </Link>
-          <Link className="help" to='/download'>
-            <div className="help-i">
-              <i className="iconfont icon-app"></i>
-            </div>
-            <div className="help-t">
-              <span>下载APP</span>
-              <span>></span>
-            </div>
-          </Link>
-          <Link className="help" to='regular'>
-            <div className="help-i">
-              <i className="iconfont icon-guize"></i>
-            </div>
-            <div className="help-t gua">
-              <span>规则中心</span>
-              <span>></span>
-            </div>
-          </Link>
-        </section>
+        {/*<section className="help_container">*/}
+        {/*  <Link className="help" to="/help">*/}
+        {/*    <div className="help-i">*/}
+        {/*      <i className="iconfont icon-kefu"></i>*/}
+        {/*    </div>*/}
+        {/*    <div className="help-t">*/}
+        {/*      <span>我的客服</span>*/}
+        {/*      <span>></span>*/}
+        {/*    </div>*/}
+        {/*  </Link>*/}
+        {/*  <Link className="help" to='/download'>*/}
+        {/*    <div className="help-i">*/}
+        {/*      <i className="iconfont icon-app"></i>*/}
+        {/*    </div>*/}
+        {/*    <div className="help-t">*/}
+        {/*      <span>下载APP</span>*/}
+        {/*      <span>></span>*/}
+        {/*    </div>*/}
+        {/*  </Link>*/}
+        {/*  <Link className="help" to='regular'>*/}
+        {/*    <div className="help-i">*/}
+        {/*      <i className="iconfont icon-guize"></i>*/}
+        {/*    </div>*/}
+        {/*    <div className="help-t gua">*/}
+        {/*      <span>规则中心</span>*/}
+        {/*      <span>></span>*/}
+        {/*    </div>*/}
+        {/*  </Link>*/}
+        {/*</section>*/}
         <BottomTabBar />
       </div>
     )

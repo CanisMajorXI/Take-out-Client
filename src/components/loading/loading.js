@@ -8,7 +8,7 @@ class Loading extends Component {
     return (
       <div className='icon_wrapper'>
         <i className="iconfont icon-loading loading"></i>
-        <p>加载中...</p>
+        <p>Loading...</p>
       </div>
     );
   }

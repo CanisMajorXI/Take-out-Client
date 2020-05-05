@@ -27,7 +27,7 @@ function AddressAdd(props) {
     let deVal = detailRef.current.value;
 
     if (!linkVal || !phoneVal || !addVal || !deVal) {
-      return Toast.warning('不能为空, 必须填写...');
+      return Toast.warning('This cannot be empty...');
     }
 
     let id = userInfo.id;
@@ -54,7 +54,7 @@ function AddressAdd(props) {
       setStorage('address', addressLocal);
       return handleGoBack();
     } else {
-      return Toast.error('服务器正忙, 请稍后再试...')
+      return Toast.error('Server is busy now, try again later...')
     }
   }
 
@@ -76,29 +76,29 @@ function AddressAdd(props) {
         <span onClick={handleGoBack}>
           <i className="iconfont icon-you-copy"></i>
         </span>
-        <h1>{match.params.id ? '修改' : '添加'}地址</h1>
+        <h1>{match.params.id ? 'Modify ' : 'Add '}Address</h1>
       </header>
       <main className="content">
         <div className='form'>
           <div className="linkman">
-            <span>联系人</span>
-            <input ref={linkRef} type="text" placeholder="姓名" defaultValue={targetAddress.name} />
+            <span>Name</span>
+            <input ref={linkRef} type="text" placeholder="input your name" defaultValue={targetAddress.name} />
           </div>
           <div className="linkman">
-            <span>电话</span>
-            <input ref={phoneRef} type="text" placeholder="手机号码" defaultValue={targetAddress.phone} />
+            <span>Phone</span>
+            <input ref={phoneRef} type="text" placeholder="input your phone number" defaultValue={targetAddress.phone} />
           </div>
           <div className="linkman">
-            <span>地址</span>
-            <input ref={addressRef} type="text" placeholder="小区/写字楼/学校" defaultValue={targetAddress.address} />
+            <span>Address</span>
+            <input ref={addressRef} type="text" placeholder="input your address" defaultValue={targetAddress.address} />
           </div>
           <div className="linkman">
-            <span>详细</span>
-            <input ref={detailRef} type="text" placeholder="门牌号" defaultValue={targetAddress.detail} />
+            <span>Detail</span>
+            <input ref={detailRef} type="text" placeholder="input your detailed address e.g. dorm no." defaultValue={targetAddress.detail} />
           </div>
         </div>
         <div className='form_btn'>
-          <button className='btn' onClick={handleConfirm}>确定</button>
+          <button className='btn' onClick={handleConfirm}>OK</button>
         </div>
       </main>
     </div>

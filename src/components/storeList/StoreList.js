@@ -11,34 +11,34 @@ function StoreList(props) {
       {storeList.map(store => (
         <li className="merchant_item" key={store._id}>
           <Link to={`/shop/${store._id}`} className="merchant_detail">
-            <div className="left_logo">
-              <img src={store.store_logo_url} alt="logo" />
-            </div>
+            {/*<div className="left_logo">*/}
+            {/*  <img src={store.store_logo_url} alt="logo" />*/}
+            {/*</div>*/}
             <div className="text_detail">
               <div className="name">
                 <h2>{store.store_name}</h2>
                 <span>...</span>
               </div>
               <div className="rate_num">
-                <div className="stars">
-                  <Stars rate={store.store_grade} />
-                  <span>{store.store_grade}</span>
-                </div>
-                <p>商家配送</p>
+                {/*<div className="stars">*/}
+                {/*  <Stars rate={store.store_grade} />*/}
+                {/*  <span>{store.store_grade}</span>*/}
+                {/*</div>*/}
+                <p>Merchant Delivery</p>
               </div>
               <div className="dispatch">
                 <div>
-                  <span>￥{store.startup_cost}起送</span>
+                  <span>up to ￥{store.startup_cost}</span>
                   <span className="split">|</span>
                   <span>
                     {store.distribution_cost
-                      ? `配送费￥${store.distribution_cost}`
-                      : '免配送费'}
+                      ? `delivery: ￥${store.distribution_cost}`
+                      : 'free delivery'}
                   </span>
                 </div>
                 <div>
                   <span>718m</span>
-                  <span className="split">|</span>30分钟<span></span>
+                  <span className="split">|</span>30 min<span></span>
                 </div>
               </div>
               {!store.resultList ? (

@@ -36,7 +36,7 @@ function MyAddress(props) {
         <span onClick={handleGoBack}>
           <i className="iconfont icon-you-copy"></i>
         </span>
-        <h1>选择地址</h1>
+        <h1>Select your address</h1>d
       </header>
       {!addressList.length ? (
         <EmptyTip />
@@ -61,7 +61,7 @@ function MyAddress(props) {
                   </div>
                 </div>
                 <div className="operate">
-                  <input type="radio" name="select" id="select" />
+                  <input type="radio" name="select" id="select"/>
                 </div>
               </div>
             )
@@ -76,7 +76,7 @@ function MyAddress(props) {
         })}
       >
         <span className="iconfont icon-jia"></span>
-        <p>新增收货地址</p>
+        <p>Add new Address</p>
       </Link>
     </div>
   )

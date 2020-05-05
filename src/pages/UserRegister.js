@@ -22,13 +22,13 @@ function UserRegister(props) {
         passExp = /^\S{6,16}$/;
 
     if (username === '' || phone === '' || password === '') {
-      return Toast.error('手机号、用户名、密码不能为空');
+      return Toast.error('Empty phone number username or password!');
     } else if (!nameExp.test(username)) {
-      return Toast.error('用户名不合法');
+      return Toast.error('Invalid username');
     } else if (!phoneExp.test(phone)) {
-      return Toast.error('手机号不合法')
+      return Toast.error('')
     } else if (!passExp.test(password)) {
-      return Toast.error('密码长度为6-16');
+      return Toast.error('password length 6-16');
     }
 
     let res = await userRegister({
@@ -40,7 +40,7 @@ function UserRegister(props) {
     if (res.status === 200 && res.data.errorCode === 0) {
       props.history.push('/user/login');
     } 
-    return Toast.success(res.data.message+', 请登录', 5000);
+    return Toast.success(res.data.message+', Please Log in', 5000);
   }
 
   return (
@@ -49,25 +49,25 @@ function UserRegister(props) {
         <span onClick={handleGoBack}>
           <i className="iconfont icon-you-copy"></i>
         </span>
-        <h1>用户注册</h1>
+        <h1>Sign up</h1>
       </header>
       <section className='form_group'>
         <div className='form'>
           <label htmlFor="phone">
-            手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机:
+           Phone:
             <input type="text" name='phone' id='phone' ref={phoneRef}/>
           </label>
           <label htmlFor="username">
-            用&nbsp;户&nbsp;名: 
+           Username:
             <input id='username' name='username' type="text" ref={usernameRef}/>
           </label>
           <label htmlFor="password">
-            密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:
+           Password:
             <input type="password" name="password" id="password" ref={passwordRef}/>
           </label>
-          <button className='btn' onClick={handleClickRegister}>注册</button>
+          <button className='btn' onClick={handleClickRegister}>Register</button>
           <Link to="/user/login" className="login-tip">
-            已有账号？<span>去登录</span>
+            Have Account？<span>Go to sign in</span>
           </Link>
         </div>
       </section>

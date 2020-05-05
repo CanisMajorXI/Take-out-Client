@@ -16,7 +16,7 @@ function UserInfo(props) {
       isLogin: false
     })
     history.push('/user');
-    Toast.success('退出登录成功...');
+    Toast.success('Log out success...');
   }
 
   function historyToAvatar() {
@@ -29,34 +29,34 @@ function UserInfo(props) {
 
   return (
     <div className='user_info_contaienr'>
-      <div className='avatar item' onClick={ historyToAvatar }>
-        <b>头像</b>
-        <div className='avatar_img'>
-          <img src={ avatar } alt=""/>
-          <span className='icon'>></span>
-        </div>
-      </div>
+      {/*<div className='avatar item' onClick={ historyToAvatar }>*/}
+      {/*  <b>头像</b>*/}
+      {/*  <div className='avatar_img'>*/}
+      {/*    <img src={ avatar } alt=""/>*/}
+      {/*    <span className='icon'>></span>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
       <div className='username item'>
-        <b>用户名</b>
+        <b>Username</b>
         <span>{ userInfo.username }</span>
       </div>
-      <h2>账号绑定</h2>
+      <h2>Account Binding</h2>
       <div className='phone item'>
-        <b>手机</b>
+        <b>Phone</b>
         <span className='content'>
           <span>{ userInfo.phone }</span>
           <span className='icon'>></span>
         </span>
       </div>
-      <h2>安全设置</h2>
+      <h2>Security Settings</h2>
       <div className='phone item'>
-        <b>登录密码</b>
+        <b>Password</b>
         <Link className='content' to='/user/password'>
-          <span className='change_text'>修改</span>
+          <span className='change_text'>change</span>
           <span className='icon'>></span>
         </Link>
       </div>
-      <button className='back_btn' onClick={ handleQuit }>退出登录</button>
+      <button className='back_btn' onClick={ handleQuit }>Log out</button>
     </div>
   )
 }

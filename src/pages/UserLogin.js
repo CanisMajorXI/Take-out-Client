@@ -29,15 +29,15 @@ function UserLogin(props) {
       valideteCode = codeRef.current.value;
 
     if (username === "" || password === "") {
-      return Toast.error("请输入账号密码");
+      return Toast.error("Empty username or password!");
     }
 
     if (valideteCode === '') {
-      return Toast.error("请输入验证码");
+      return Toast.error("empty verify code");
     }
 
     if (valideteCode.toUpperCase() !== code) {
-      return Toast.error("验证码错误");
+      return Toast.error("verify code error");
     }
 
     const result = await requestUserLogin({
@@ -85,7 +85,7 @@ function UserLogin(props) {
         <span onClick={handleGoBack}>
           <i className="iconfont icon-you-copy"></i>
         </span>
-        <h1>用户登陆</h1>
+        <h1>Sign In</h1>
       </header>
       <section className="form_group">
         <div className="form">
@@ -94,15 +94,15 @@ function UserLogin(props) {
             id="username"
             name="username"
             type="text"
-            placeholder="请输入用户名或手机号"
-            defaultValue='15170729230'
+            placeholder="Input your user name or phone number"
+            defaultValue='16666666666'
           />
           <input
             ref={passwordRef}
             type="password"
             name="password"
             id="password"
-            placeholder="请输入密码"
+            placeholder="input your password"
             defaultValue='123456'
           />
           <div className="box">
@@ -116,10 +116,10 @@ function UserLogin(props) {
             ></canvas>
           </div>
           <button className="btn" onClick={handleClickLogin}>
-            登录
+            Log in
           </button>
           <Link to="/user/register" className="register">
-            没有账号？<span>去注册</span>
+            No Account？<span>Go to sign up</span>
           </Link>
         </div>
       </section>

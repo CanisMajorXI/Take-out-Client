@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function ShopTabBar(props) {
-  let [tabList] = useState(['点餐', '评价', '商家']);
+  let [tabList] = useState(['Order', 'Comment', 'Shop']);
 
   let { currentIndex, setCurrentIndex } = props;
 

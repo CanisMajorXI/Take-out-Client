@@ -23,7 +23,7 @@ export default class Search extends Component {
       let data = result.data.data
 
       if (!data.length) {
-        return Toast.warning('未找到内容...')
+        return Toast.warning('Content not found...')
       }
 
       this.setState({
@@ -41,7 +41,7 @@ export default class Search extends Component {
       }
       setStorage('historySearchList', historySearchList)
     } else {
-      Toast.error('服务器正忙...')
+      Toast.error('The server is busy...')
     }
   }
 
@@ -56,16 +56,16 @@ export default class Search extends Component {
           <div className="search_input">
             <i className="iconfont icon-sousuo"></i>
             <input
+                style={{width: '70%'}}
               type="search"
               name="q"
-              placeholder="输入商家、商品名称"
+              placeholder="Input the name of shop or food"
               onInput={e => this.setState({ value: e.currentTarget.value })}
             />
             <button
               className="btn"
               onClick={() => this.handleClickSearch(value)}
-            >
-              搜索
+            >Search
             </button>
           </div>
         </section>

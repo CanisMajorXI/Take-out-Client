@@ -44,7 +44,7 @@ class Order extends Component {
 
     return (
       <div className="order_container">
-        <div className="title">订单</div>
+        <div className="title">Order</div>
         {!orderList.length ? (
           <EmptyTip />
         ) : (

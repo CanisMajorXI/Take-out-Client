@@ -66,13 +66,10 @@ function OrderConfirmation(props) {
       return Toast.info('请添加地址...');
     }
     Modal.confirm({
-      title: '支付宝支付测试接口',
+      title: 'Please select the mode of payment ',
       contentText: `
-      请选择：继续浏览器付款
-      登录以下账号
-      账号: pvnseu0360@sandbox.com
-      登录密码: 111111
-      支付密码: 111111
+      1： AliPay
+      2: Wechat
       `,
       async onOk() {
         let sendData = {
@@ -106,28 +103,28 @@ function OrderConfirmation(props) {
         <span onClick={handleGoBack}>
           <i className="iconfont icon-you-copy"></i>
         </span>
-        <h1>确认订单</h1>
+        <h1>Confirm the order</h1>
       </header>
       <section className="address">
-        {
-          address.name ? (
-            <>
-              <p>订单配送至</p>
-              <Link to={{ pathname: '/user/address/select', search: `?redirect=${location.pathname + location.search}` }}>
-                <p>
-                  <span>{address.address + address.detail}</span>
-                  <span>></span>
-                </p>
-                <div className="user_detail">
-                  <span>{address.name}</span>
-                  <span>{address.phone}</span>
-                </div>
-              </Link>
-            </>
-          ) : (
-              <Link to='/user/address/select' className='address_select'>选择地址</Link>
-            )
-        }
+        {/*{*/}
+        {/*  address.name ? (*/}
+        {/*    <>*/}
+        {/*      <p>订单配送至</p>*/}
+        {/*      <Link to={{ pathname: '/user/address/select', search: `?redirect=${location.pathname + location.search}` }}>*/}
+        {/*        <p>*/}
+        {/*          <span>{address.address + address.detail}</span>*/}
+        {/*          <span>></span>*/}
+        {/*        </p>*/}
+        {/*        <div className="user_detail">*/}
+        {/*          <span>{address.name}</span>*/}
+        {/*          <span>{address.phone}</span>*/}
+        {/*        </div>*/}
+        {/*      </Link>*/}
+        {/*    </>*/}
+        {/*  ) : (*/}
+        {/*      <Link to='/user/address/select' className='address_select'>选择地址</Link>*/}
+        {/*    )*/}
+        {/*}*/}
       </section>
       <section className="cart_group">
         <h3 className="cart_storename">{order.storeName}</h3>
@@ -135,9 +132,9 @@ function OrderConfirmation(props) {
           {order.cartList && order.cartList.map((food, i) => {
             return (
               <li className="cart_item" key={i}>
-                <div className="logo">
-                  <img src={food.pic} alt="logo" />
-                </div>
+                {/*<div className="logo">*/}
+                {/*  <img src={food.pic} alt="logo" />*/}
+                {/*</div>*/}
                 <span className="name">{food.name}</span>
                 <span className="num">x {food.num}</span>
                 <span className="price">￥{food.price}</span>
@@ -146,7 +143,7 @@ function OrderConfirmation(props) {
           })}
         </ul>
         <div className="dispatch_cost other">
-          <span>配送费</span>
+          <span>delivery cost</span>
           <span>￥{order.dispatchCost}</span>
         </div>
         {/** 
@@ -157,9 +154,8 @@ function OrderConfirmation(props) {
               </div>
           */}
         <div className="price other">
-          <span>优惠说明</span>
           <span>
-            小计 ￥<span className="all_price">{order.allPrice}</span>
+            Total ￥<span className="all_price">{order.allPrice}</span>
           </span>
         </div>
         <footer className="pay_bar">

@@ -90,22 +90,22 @@ function ShopFoodList(props) {
 
   return (
     <>
-      {foods_commend && !foods_commend['length'] ? (
-        ''
-      ) : (
-        <ShopCommend
-          cartList={cartList}
-          handleAddToCart={handleAddToCart}
-          handleReduceCart={handleReduceCart}
-          shopData={shopData}
-        />
-      )}
+      {/*{foods_commend && !foods_commend['length'] ? (*/}
+      {/*  ''*/}
+      {/*) : (*/}
+      {/*  <ShopCommend*/}
+      {/*    cartList={cartList}*/}
+      {/*    handleAddToCart={handleAddToCart}*/}
+      {/*    handleReduceCart={handleReduceCart}*/}
+      {/*    shopData={shopData}*/}
+      {/*  />*/}
+      {/*)}*/}
       <div className="menuview_wrapper">
         <main className="menuview_main">
           <div className="left_menu">
             <ul className="menu_category">
               {store_categories &&
-                store_categories.map((cat, i) => {
+                store_categories.slice(0,1).map((cat, i) => {
                   return !cat.children.length ? (
                     ''
                   ) : (
@@ -119,7 +119,7 @@ function ShopFoodList(props) {
                       onClick={handleChangeMenu}
                       key={i}
                     >
-                      {cat.cat_name}
+                      popular
                     </li>
                   )
                 })}
@@ -133,34 +133,34 @@ function ShopFoodList(props) {
                     ''
                   ) : (
                     <dl key={i}>
-                      <dt>
-                        <div className="food_title">
-                          <strong>{cat.cat_name}</strong>
-                          {i === 0 ? <span>大家喜欢吃，才叫真好吃。</span> : ''}
-                        </div>
-                      </dt>
+                      {/*<dt>*/}
+                      {/*  <div className="food_title">*/}
+                      {/*    <strong>{cat.cat_name}</strong>*/}
+                      {/*    {i === 0 ? <span>大家喜欢吃，才叫真好吃。</span> : ''}*/}
+                      {/*  </div>*/}
+                      {/*</dt>*/}
                       {cat.children.map((item, index) => {
                         return (
                           <dd key={index}>
                             <div className="food_detail_wrapper">
-                              <span className="food_pic">
-                                <img
-                                  src={
-                                    item.food_pic ||
-                                    'http://pic.51yuansu.com/pic3/cover/01/55/70/594c83ce7e5b3_610.jpg'
-                                  }
-                                  alt=""
-                                />
-                              </span>
+                              {/*<span className="food_pic">*/}
+                              {/*  <img*/}
+                              {/*    src={*/}
+                              {/*      item.food_pic ||*/}
+                              {/*      'http://pic.51yuansu.com/pic3/cover/01/55/70/594c83ce7e5b3_610.jpg'*/}
+                              {/*    }*/}
+                              {/*    alt=""*/}
+                              {/*  />*/}
+                              {/*</span>*/}
                               <section className="food">
                                 <div className="food_detail">
                                   <p className="food_name">{item.food_name}</p>
-                                  <p className="food_desc">
-                                    {item.food_ingredient}
-                                  </p>
+                                  {/*<p className="food_desc">*/}
+                                  {/*  {item.food_ingredient}*/}
+                                  {/*</p>*/}
                                   <p className="food_sales">
-                                    <span>月售{item.food_sales}份</span>
-                                    <span>好评率100%</span>
+                                    <span>Month Sales: {item.food_sales}</span>
+                                    <span>Pos Rate: 100%</span>
                                   </p>
                                 </div>
                                 <div className="food_card">

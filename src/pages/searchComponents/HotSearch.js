@@ -27,7 +27,7 @@ export default function HotSearch(props) {
       ) : (
         <section className="history_search_wrapper">
           <header className="search_title">
-            <span>历史搜索</span>
+            <span>History</span>
             <div
               aria-label="清楚历史搜索"
               role="button"
@@ -52,7 +52,7 @@ export default function HotSearch(props) {
         </section>
       )}
       <section className="hot_search_wrapper">
-        <header className="search_title">热门搜索</header>
+        <header className="search_title">Popular</header>
         <section className="search_content">
           {hotItem.map((item, index) => {
             return (

@@ -32,7 +32,7 @@ function BottomCart(props) {
         search: `?redirect=${location.pathname}`
       });
     } else {// 未登陆，跳转到登录页
-      Toast.warning('请登录...');
+      Toast.warning('Please log in...');
       history.push({
         pathname: '/user/login',
         search: `?redirect=${location.pathname}`
@@ -44,15 +44,15 @@ function BottomCart(props) {
     <div className='bottom_cart_container'>
       {
         isEmpty ? (<>
-          <span className='cart_icon'><i className='iconfont icon-icon_cart'></i></span>
-          <div className='cart_setail'>未选购商品</div>
-          <div className='pay'>￥0起送</div>
+          {/*<span className='cart_icon'><i className='iconfont icon-icon_cart'></i></span>*/}
+          <div className='cart_setail'>Empty Cart</div>
+          {/*<div className='pay'>￥0起送</div>*/}
         </>) : (<>
-            <span className='cart_icon active'><i className='iconfont icon-icon_cart active'></i></span>
+            {/*<span className='cart_icon active'><i className='iconfont icon-icon_cart active'></i></span>*/}
             <div className='cart_setail'>
               <p className='all_price'>￥{allPrice}</p>
             </div>
-            <div className='pay active' onClick={handleClickPay}>去结算</div>
+            <div className='pay active' onClick={handleClickPay}>Settlement</div>
         </>)
       }
     </div>
