@@ -7,6 +7,7 @@ import Toast from '../components/toast'
 // http://127.0.0.1:8080/api/public/v1
 // let env = process.env.NODE_ENV
 axios.defaults.baseURL = 'http://localhost:8080/api/public/v1'
+// axios.defaults.baseURL = 'http://s1.nsloop.com:20000/api/public/v1'
 // 请求队列
 let queueNum = 0
 

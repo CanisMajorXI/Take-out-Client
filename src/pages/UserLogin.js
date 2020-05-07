@@ -16,7 +16,7 @@ function UserLogin(props) {
   let canvasRef = useRef(null);
   let codeRef = useRef(null);
   let [code, setCode] = useState('');
-
+  const [isAdmin,setAdmin] = useState(false)
   function handleGoBack() {
     let redirect = formatSearch(location.search);
 
@@ -86,7 +86,9 @@ function UserLogin(props) {
           <i className="iconfont icon-you-copy"></i>
         </span>
         <h1>Sign In</h1>
+
       </header>
+
       <section className="form_group">
         <div className="form">
           <input
@@ -105,9 +107,23 @@ function UserLogin(props) {
             placeholder="input your password"
             defaultValue='123456'
           />
+
           <div className="box">
-            <input ref={codeRef} type="text" id="validate" placeholder="验证码" defaultValue={code} />
+            <div>
+              <label><input name="Admin" type="radio" value={false} checked onChange={e=> setAdmin(e.target.value)}/>User </label>
+              <label><input name="Admin" type="radio" value={true}  onChange={e=> setAdmin(e.target.value)}/>Admin </label>
+            </div>
+            {isAdmin ?  <input
+
+                type="password"
+                name="admin_password"
+                id="admin_password"
+                placeholder="admin password"
+                // defaultValue='123456'
+            /> : null}
+            <input ref={codeRef} style={{display: 'none'}} type="text" id="validate" placeholder="verifyCode" defaultValue={code} />
             <canvas
+                style={{display: 'none'}}
               ref={canvasRef}
               id="canvas"
               width="100"

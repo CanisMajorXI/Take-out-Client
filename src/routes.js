@@ -17,6 +17,7 @@ import Help from './pages/help'
 import OrderAssess from './pages/orderAssess/OrderAssess'
 import Regular from './pages/regular/Regular'
 import DownloadApp from './pages/downloadApp/DownloadApp'
+import AdminOrder from "./pages/AdminOrder";
 
 const needCacheRoutes = [
   { path: '/', name: 'Home', component: Foods },
@@ -35,6 +36,7 @@ const needCacheRoutes = [
   { path: '/user/info', name: 'UserInfo', component: UserInfo, auth: true },
   { path: '/user', name: 'User', component: User },
   { path: '/order', name: 'Order', component: Order, auth: true },
+  { path: '/adminOrder', name: 'AdminOrder', component: AdminOrder, auth: true },
   {
     path: '/order/assess/:orderNum',
     name: 'OrderAssess',

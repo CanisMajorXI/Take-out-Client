@@ -37,8 +37,8 @@ function StoreList(props) {
                   </span>
                 </div>
                 <div>
-                  <span>718m</span>
-                  <span className="split">|</span>30 min<span></span>
+                  <span>{Math.round(Math.random()*200 + 200)}m</span>
+                  <span className="split">|</span>{Math.round(Math.random()*10 + 10)}min<span></span>
                 </div>
               </div>
               {!store.resultList ? (

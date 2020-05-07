@@ -8,13 +8,6 @@ function OrderDetail(props) {
 
   useEffect(() => {
     let { orderNum } = match.params
-    ;(async () => {
-      let result = await reqOrderDetail(orderNum)
-      if (result.status === 200 && result.data.errorCode === 0) {
-        setOrder(result.data.data)
-      }
-    })()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function handleGoBack() {
@@ -27,14 +20,14 @@ function OrderDetail(props) {
         <span onClick={handleGoBack}>
           <i className="iconfont icon-you-copy"></i>
         </span>
-        <h1>订单详情</h1>
+        <h1>Order Detail</h1>
       </header>
       <section className="order_group">
-        <div className="title">订单信息</div>
+        <div className="title">Order Info</div>
         <ul>
-          <li className="order_item">订单号：{order.num}</li>
-          <li className="order_item">支付方式: 在线支付</li>
-          <li className="order_item">下单时间: {formateDate(order.time)}</li>
+          <li className="order_item">Order Num：20200508123456</li>
+          <li className="order_item">Payment method: online payment</li>
+          <li className="order_item">order time : May 8th, 2020</li>
         </ul>
       </section>
     </div>

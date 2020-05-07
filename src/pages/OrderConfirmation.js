@@ -91,7 +91,7 @@ function OrderConfirmation(props) {
           setStorage('cartList', cart);
           window.location.href = res.data.result;
         } else {
-          Toast.error('服务器正忙...');
+          Toast.error('The server is busy...');
         }
       }
     })
@@ -138,7 +138,7 @@ function OrderConfirmation(props) {
         </div>
         <footer className="pay_bar">
           <span>￥{order.allPrice}</span>
-          <div className="pay" onClick={handleClickPay}>去支付</div>
+          <div className="pay" onClick={handleClickPay}>Pay</div>
         </footer>
       </section>
     </div>

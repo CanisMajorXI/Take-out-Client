@@ -6,6 +6,8 @@ import formateDate from '../util/formatDate'
 import { requestGetOrders } from '../api'
 import Toast from '../components/toast'
 import EmptyTip from '../components/empty-tip'
+import userInfo from "./userInfo/userInfo";
+import moment from "moment";
 
 @connect(state => ({ userInfo: state.user.userInfo }))
 class Order extends Component {
@@ -24,19 +26,31 @@ class Order extends Component {
     this.props.history.push(`/order/assess/${id}`)
   }
 
-  async componentDidMount() {
-    let {
-      userInfo: { id }
-    } = this.props
-    // 获取列表
-    let result = await requestGetOrders(id)
-    if (result.status === 200 && result.data.errorCode === 0) {
+   componentDidMount() {
+    const obj = JSON.parse("{\n" +
+        "        \"foods\": [{\n" +
+        "            \"name\": \"spicy chicken wings\",\n" +
+        "            \"id\": \"10038\",\n" +
+        "            \"price\": \"139.8\",\n" +
+        "            \"pic\": \"https://cube.elemecdn.com/8/31/d99d0067db4516921024bf14e6424jpeg.jpeg?x-oss-process=image/resize,m_lfit,w_141,h_141/watermark,g_se,x_4,y_4,image_YS8xYS82OGRlYzVjYTE0YjU1ZjJlZmFhYmIxMjM4Y2ZkZXBuZy5wbmc_eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsUF8yOA%3D%3D/quality,q_90/format,webp\",\n" +
+        "            \"num\": 1\n" +
+        "        }],\n" +
+        "        \"_id\": \"5eac402bc54ae9001c14eb4e\",\n" +
+        "        \"num\": \"202051152843_x23xp8vnz\",\n" +
+        "        \"time\": \"2020-05-01T15:28:43.118Z\",\n" +
+        "        \"storeId\": \"5dd292a8b077520c2839aa0b\",\n" +
+        "        \"userId\": \"5dde4810fd44caeee8245224\",\n" +
+        "        \"storeName\": \"Wallace's burger\",\n" +
+        "        \"storeLogoUrl\": \"http://118.31.2.223:8080/uploads/avatars/5dd292a8b077520c2839aa0b-file-17187737d17.png\",\n" +
+        "        \"price\": 31.80,\n" +
+        "        \"userAddress\": \"dfgd\",\n" +
+        "        \"userName\": \"dfgd\",\n" +
+        "        \"userPhone\": \"fgdf\"\n" +
+        "    }")
+
       this.setState({
-        orderList: result.data.orders
+        orderList: [obj],
       })
-    } else {
-      Toast.error(result.data.message)
-    }
   }
 
   render() {
@@ -50,11 +64,9 @@ class Order extends Component {
         ) : (
           <div className="order_list">
             {orderList.map((order, index) => {
+              console.log(order)
               return (
                 <div className="order_item" key={index}>
-                  <Link className="order_avatar" to={`/shop/${order.storeId}`}>
-                    <img src={order.storeLogoUrl} alt="logo" />
-                  </Link>
                   <div className="order_detail">
                     <div className="trade_name">
                       <div className="trade">
@@ -62,10 +74,10 @@ class Order extends Component {
                           {order.storeName}
                         </Link>
                         <div className="spilt">></div>
-                        <div className="arrive">已支付</div>
+                        <div className="arrive">Paid</div>
                       </div>
                       <div className="order_time">
-                        {formateDate(order.time)}
+                        {moment().subtract(index === 0 ? 5 : 200,'minutes').calendar()}
                       </div>
                     </div>
                     <Link
@@ -74,26 +86,15 @@ class Order extends Component {
                     >
                       <div className="name">
                         <div className="n">{order.foods[0].name}</div>
-                        <div className="num">等{order.foods.length}件商品</div>
                       </div>
                       <div className="price">￥{order.price}</div>
                     </Link>
                     <div className="order_operate">
-                      <button
-                        onClick={this.handleClickAssess.bind(
-                          this,
-                          order.num
-                        )}
-                      >
-                        评价
+                      <button>
+                        Comment
                       </button>
-                      <button
-                        onClick={this.handleClickReOrder.bind(
-                          this,
-                          order.storeId
-                        )}
-                      >
-                        再来一单
+                      <button>
+                        Buy Again
                       </button>
                     </div>
                   </div>

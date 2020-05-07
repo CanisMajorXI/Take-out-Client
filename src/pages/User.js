@@ -72,6 +72,16 @@ class User extends Component {
             <span>></span>
           </Link>
         </section>
+        {username === 'admin' ? <section className="address_b">
+          <div className="icon">
+            <i className="iconfont icon-dizhi"></i>
+          </div>
+          <Link className="address" to="/adminOrder">
+            <span>Manage user orders</span>
+            <span>></span>
+          </Link>
+        </section> : null}
+
         <BottomTabBar />
       </div>
     )

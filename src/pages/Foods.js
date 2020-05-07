@@ -59,7 +59,7 @@ class Food extends Component {
             onClick={this.handleAddress.bind(this)}
           >
             <i className="iconfont icon-zuobiao"></i>
-            <span className="address_name">{currentAddr || '添加地址'}</span>
+            <span className="address_name">{currentAddr || '+Address'}</span>
             <i className="icon_trig"></i>
           </div>
           <Link to="/search" className="search_input">
