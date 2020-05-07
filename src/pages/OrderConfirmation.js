@@ -4,7 +4,6 @@ import { getStorage, setStorage } from "../util/storage";
 import Toast from '../components/toast';
 import Modal from '../components/modal';
 import { generateOrder } from '../api';
-import { Link } from 'react-router-dom';
 import formatSearch from '../util/formatSearch';
 
 function OrderConfirmation(props) {
@@ -81,11 +80,9 @@ function OrderConfirmation(props) {
           price: order.allPrice,
           address
         }
-        // 生成新的订单
         let res = await generateOrder(sendData);
 
         if (res.status === 200 && res.data.errorCode === 0) {
-          //退出订单页面, 清楚本地存储
           const cart = getStorage('cartList') || {};
           cart[shopData._id] = [];
           setStorage('cartList', cart);
@@ -124,13 +121,6 @@ function OrderConfirmation(props) {
           <span>delivery cost</span>
           <span>￥{order.dispatchCost}</span>
         </div>
-        {/** 
-           * 
-           * <div className='other'>
-              <span>红包</span>
-              <span>-4</span>
-              </div>
-          */}
         <div className="price other">
           <span>
             Total ￥<span className="all_price">{order.allPrice}</span>

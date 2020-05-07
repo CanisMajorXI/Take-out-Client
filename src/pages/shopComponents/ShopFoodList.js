@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useRef } from 'react'
-import ShopCommend from './ShopCommend'
 import isCart from '../../util/isCart'
 import PropTypes from 'prop-types'
 
@@ -90,16 +89,6 @@ function ShopFoodList(props) {
 
   return (
     <>
-      {/*{foods_commend && !foods_commend['length'] ? (*/}
-      {/*  ''*/}
-      {/*) : (*/}
-      {/*  <ShopCommend*/}
-      {/*    cartList={cartList}*/}
-      {/*    handleAddToCart={handleAddToCart}*/}
-      {/*    handleReduceCart={handleReduceCart}*/}
-      {/*    shopData={shopData}*/}
-      {/*  />*/}
-      {/*)}*/}
       <div className="menuview_wrapper">
         <main className="menuview_main">
           <div className="left_menu">

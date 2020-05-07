@@ -50,12 +50,10 @@ function UserLogin(props) {
 
       let { userInfo, avatar, message, token } = result.data;
       Toast.success(message);
-      // 更新缓存中的token、avatar
       let avatars = getStorage("avatar");
       setStorage("token", token);
       setStorage("avatar", { ...avatars, [userInfo.id]: avatar });
 
-      // userInfo  avata、信息存放在redux中
       userLogin({
         userInfo,
         isLogin: true

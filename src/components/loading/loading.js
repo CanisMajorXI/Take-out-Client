@@ -39,7 +39,6 @@ function createLoading() {
         clearTimeout(timer);
       }, 500)
     },
-    // loading时禁止用户滑屏
     disablePageScroll() {
       document.querySelector("html").style.overflow = "hidden";
       document.addEventListener("touchmove", _eventPreventDefault, false);

@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 import ShopTabBar from "./shopComponents/ShopTabBar";
 import ShopFoodList from './shopComponents/ShopFoodList';
-import ShopComment from "./shopComponents/ShopComment";
 import ShopInfo from "./shopComponents/ShopInfo";
 import BottomCart from './shopComponents/BottomCart';
 import { connect } from 'react-redux';
@@ -21,14 +20,12 @@ class Shop extends Component {
     };
   }
 
-  // 点餐、评价、商家的Tab切换索引
   setCurrentIndex(index) {
     this.setState({
       currentIndex: index
     });
   }
 
-  // 点击回退
   clickGoback() {
     this.props.history.replace('/');
   }
@@ -44,7 +41,6 @@ class Shop extends Component {
   }
 
   async componentDidMount() {
-    // 获取数据: 商品、购物车数据
     let { id } = this.props.match.params;
     let result = await getShopDetail(id);
     let cart = getStorage('cartList') || {};
@@ -81,7 +77,7 @@ class Shop extends Component {
         </div>
         <div className='main_content'>
           {
-            currentIndex === 0 ? <ShopFoodList shopData={shopData} storeId={id} cartList={cartList} updataCartList={this.updataCartList.bind(this)} /> : (currentIndex === 1 ? <ShopComment /> : <ShopInfo />) 
+            currentIndex === 0 ? <ShopFoodList shopData={shopData} storeId={id} cartList={cartList} updataCartList={this.updataCartList.bind(this)} /> : (currentIndex === 1 ? <ShopInfo /> : <ShopInfo />)
           }
         </div>
         <BottomCart history={history} location={location} cartList={cartList} shopData={shopData}/>

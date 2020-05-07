@@ -3,7 +3,7 @@ import { getStorage } from '../../util/storage'
 
 export default function HotSearch(props) {
   const [historySearchList, setHistorySearchList] = useState([])
-  const [hotItem] = useState(['奶茶', '汤', '盖浇饭', '鸡', '煲仔饭', '粉'])
+  const [hotItem] = useState(['Tea', 'Coffee', 'Chicken'])
 
   useEffect(() => {
     let searchList = getStorage('historySearchList') || []

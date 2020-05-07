@@ -11,19 +11,13 @@ function StoreList(props) {
       {storeList.map(store => (
         <li className="merchant_item" key={store._id}>
           <Link to={`/shop/${store._id}`} className="merchant_detail">
-            {/*<div className="left_logo">*/}
-            {/*  <img src={store.store_logo_url} alt="logo" />*/}
-            {/*</div>*/}
             <div className="text_detail">
               <div className="name">
                 <h2>{store.store_name}</h2>
                 <span>...</span>
               </div>
               <div className="rate_num">
-                {/*<div className="stars">*/}
-                {/*  <Stars rate={store.store_grade} />*/}
-                {/*  <span>{store.store_grade}</span>*/}
-                {/*</div>*/}
+
                 <p>Merchant Delivery</p>
               </div>
               <div className="dispatch">
@@ -48,13 +42,6 @@ function StoreList(props) {
                   {store.resultList.map((item, i) => {
                     return (
                       <div className="shop_item" key={i}>
-                        <img
-                          src={
-                            item.food_pic ||
-                            'http://pic.51yuansu.com/pic3/cover/01/55/70/594c83ce7e5b3_610.jpg'
-                          }
-                          alt="img"
-                        />
                         <p className="name">{item.food_name}</p>
                         <p className="price">￥{item.food_price}</p>
                       </div>

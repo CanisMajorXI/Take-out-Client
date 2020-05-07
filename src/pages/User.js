@@ -37,9 +37,6 @@ class User extends Component {
             onClick={this.historyToInfo.bind(this)}
           >
             <div className="profile">
-              {/*<div className="avatar">*/}
-              {/*  <img src={avatar} alt="" />*/}
-              {/*</div>*/}
               <div className="profile_text">
                 <span>{username}</span>
                 <span>{phone}</span>

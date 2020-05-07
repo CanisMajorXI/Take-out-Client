@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import formateDate from '../util/formatDate'
-import { reqOrderDetail } from '../api'
 
 function OrderDetail(props) {
   let [order, setOrder] = useState({})

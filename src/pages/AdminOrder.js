@@ -2,12 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import BottomTabBar from '../components/BottomTabBar'
 import { connect } from 'react-redux'
-import formateDate from '../util/formatDate'
 import moment from 'moment'
-import { requestGetOrders } from '../api'
-import Toast from '../components/toast'
+
 import EmptyTip from '../components/empty-tip'
-import userInfo from "./userInfo/userInfo";
 
 @connect(state => ({ userInfo: state.user.userInfo }))
 class AdminOrder extends Component {
@@ -16,14 +13,6 @@ class AdminOrder extends Component {
     this.state = {
       orderList: []
     }
-  }
-
-  handleClickReOrder(id) {
-    this.props.history.push(`/shop/${id}`)
-  }
-
-  handleClickAssess(id) {
-    this.props.history.push(`/order/assess/${id}`)
   }
 
    componentDidMount() {

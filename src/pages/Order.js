@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import BottomTabBar from '../components/BottomTabBar'
 import { connect } from 'react-redux'
-import formateDate from '../util/formatDate'
-import { requestGetOrders } from '../api'
-import Toast from '../components/toast'
 import EmptyTip from '../components/empty-tip'
-import userInfo from "./userInfo/userInfo";
 import moment from "moment";
 
 @connect(state => ({ userInfo: state.user.userInfo }))

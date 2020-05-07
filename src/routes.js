@@ -11,12 +11,8 @@ import MyAddress from './pages/MyAddress'
 import AddressAdd from './pages/AddressAdd'
 import AddressSelect from './pages/AddressSelect'
 import UserInfo from './pages/userInfo/userInfo'
-import AvatarUpload from './pages/avatarUpload/AvatarUpload'
 import ChangePassword from './pages/changePassword'
-import Help from './pages/help'
-import OrderAssess from './pages/orderAssess/OrderAssess'
 import Regular from './pages/regular/Regular'
-import DownloadApp from './pages/downloadApp/DownloadApp'
 import AdminOrder from "./pages/AdminOrder";
 
 const needCacheRoutes = [
@@ -37,12 +33,6 @@ const needCacheRoutes = [
   { path: '/user', name: 'User', component: User },
   { path: '/order', name: 'Order', component: Order, auth: true },
   { path: '/adminOrder', name: 'AdminOrder', component: AdminOrder, auth: true },
-  {
-    path: '/order/assess/:orderNum',
-    name: 'OrderAssess',
-    component: OrderAssess,
-    auth: true
-  },
   {
     path: '/order_detail/:storeId/:orderNum',
     name: 'OrderDetail',
@@ -74,7 +64,6 @@ const defaultRoutes = [
   //   auth: true
   // },
   // { path: '/user/info', name: 'UserInfo', component: UserInfo, auth: true },
-  { path: '/user/avatar', name: 'Avatar', component: AvatarUpload, auth: true },
   {
     path: '/user/password',
     name: 'ChangePassword',
@@ -102,16 +91,6 @@ const defaultRoutes = [
   //   name: 'OrderDetail',
   //   component: OrderDetail
   // },
-  {
-    path: '/help',
-    name: 'Help',
-    component: Help
-  },
-  {
-    path: '/download',
-    name: 'Download',
-    component: DownloadApp
-  },
   {
     path: '/regular',
     name: 'Regular',
@@ -142,7 +121,6 @@ const all = [
     auth: true
   },
   { path: '/user/info', name: 'UserInfo', component: UserInfo, auth: true },
-  { path: '/user/avatar', name: 'Avatar', component: AvatarUpload, auth: true },
   {
     path: '/user/password',
     name: 'ChangePassword',
@@ -159,26 +137,11 @@ const all = [
     component: OrderConfirmation,
     auth: true
   },
-  {
-    path: '/order/assess/:orderNum',
-    name: 'OrderAssess',
-    component: OrderAssess,
-    auth: true
-  },
+
   {
     path: '/order_detail/:storeId/:orderNum',
     name: 'OrderDetail',
     component: OrderDetail
-  },
-  {
-    path: '/help',
-    name: 'Help',
-    component: Help
-  },
-  {
-    path: '/download',
-    name: 'Download',
-    component: DownloadApp
   },
   {
     path: '/regular',
