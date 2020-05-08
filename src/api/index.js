@@ -4,6 +4,7 @@ import Loading from '../components/loading'
 import Toast from '../components/toast'
 
 
+
 axios.defaults.baseURL = 'http://localhost:8080/api/public/v1'
 
 // 请求队列

@@ -64,4 +64,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+
 export default connect(store => ({ isLogin: store.user.isLogin }), mapDispatchToProps)(BottomCart);
