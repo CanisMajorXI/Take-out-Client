@@ -62,7 +62,7 @@ function OrderConfirmation(props) {
 
   function handleClickPay() {
     if (!address.name) {
-      return Toast.info('请添加地址...');
+      return Toast.info('Please add your address first...');
     }
     Modal.confirm({
       title: 'Please select the mode of payment ',

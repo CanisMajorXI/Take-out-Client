@@ -73,7 +73,7 @@ class Order extends Component {
                         <div className="arrive">Paid</div>
                       </div>
                       <div className="order_time">
-                        {moment().subtract(index === 0 ? 5 : 200,'minutes').calendar()}
+                        {moment().calendar()}
                       </div>
                     </div>
                     <Link

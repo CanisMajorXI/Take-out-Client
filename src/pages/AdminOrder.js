@@ -104,7 +104,7 @@ class AdminOrder extends Component {
                         <div className="arrive">Paid</div>
                       </div>
                       <div className="order_time">
-                        {moment().subtract(index === 0 ? 5 : 200,'minutes').calendar()}
+                        {moment().subtract(index === 0 ? 0 : 200,'minutes').calendar()}
                       </div>
                     </div>
                     <Link
@@ -112,20 +112,26 @@ class AdminOrder extends Component {
                       to={`/order_detail/${order.storeId}/${order.num}`}
                     >
                       <div className="name">
-                        <div className="n">{order.foods[0].name}</div>
-                        <div className="num">{order.foods.length}</div>
+                        <div className="n">{index ===0 ? order.foods[0].name: '6 people set meal'}</div>
+                        <div className="num">{index ===0 ? 2: 19}</div>
                       </div>
                       <div className="price">￥{order.price}</div>
                     </Link>
                     <div className="admin_order_operate">
-                      <button
+                      <button onClick={() => {
+                          alert('receive success')
+                          this.setState({orderList: [orderList[0]]})
+                      }}
                       >
                         Receive
                       </button>
-                      <button
-                      >
-                        Decline
-                      </button>
+                        <button onClick={() => {
+                            alert('decline success')
+                            this.setState({orderList: [orderList[0]]})
+                        }}
+                        >
+                            Decline
+                        </button>
                     </div>
                   </div>
                 </div>

@@ -4,8 +4,8 @@ import Loading from '../components/loading'
 import Toast from '../components/toast'
 
 
-// axios.defaults.baseURL = 'http://localhost:8080/api/public/v1'
-axios.defaults.baseURL = 'http://s1.nsloop.com:20000/api/public/v1'
+axios.defaults.baseURL = 'http://localhost:8080/api/public/v1'
+
 // 请求队列
 let queueNum = 0
 
